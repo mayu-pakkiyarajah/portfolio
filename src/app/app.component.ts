@@ -41,7 +41,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   get visibleProjects() {
     return this.showAllProjects
       ? this.portfolio.projects
-      : this.portfolio.projects.filter(project => project.featured);
+      : this.portfolio.projects.slice(0, 2);
   }
 
   toggleMenu(): void {

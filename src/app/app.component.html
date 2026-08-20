@@ -315,9 +315,9 @@
         </article>
       </div>
 
-      <div class="center-action" *ngIf="portfolio.projects.length > 3">
+      <div class="center-action" *ngIf="portfolio.projects.length > 2">
         <button class="button button-light" type="button" (click)="toggleProjects()">
-          <span class="btn-text">{{ showAllProjects ? 'Show featured only' : 'View all projects' }}</span>
+          <span class="btn-text">{{ showAllProjects ? 'Show less' : 'View all projects' }}</span>
           <span class="btn-arrow">{{ showAllProjects ? '↑' : '↓' }}</span>
         </button>
       </div>
