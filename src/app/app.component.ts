@@ -16,6 +16,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   isBrowser = false;
   activeSection = 'home';
   mousePosition = { x: 0, y: 0 };
+  isDarkMode = true;
 
   resumeUrl = 'assets/resume/Mayuravel_Pakkiyarajah_SE.pdf';
 
@@ -25,6 +26,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     if (this.isBrowser) {
+      this.initTheme();
       this.setupIntersectionObserver();
       this.setupMouseTracking();
     }
@@ -77,6 +79,22 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   hasUrl(url?: string): boolean {
     return !!url?.trim();
+  }
+
+  toggleTheme(): void {
+    this.isDarkMode = !this.isDarkMode;
+    const theme = this.isDarkMode ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }
+
+  private initTheme(): void {
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    this.isDarkMode = savedTheme ? savedTheme === 'dark' : prefersDark;
+    const theme = this.isDarkMode ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', theme);
   }
 
   private setupIntersectionObserver(): void {

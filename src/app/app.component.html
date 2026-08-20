@@ -50,6 +50,30 @@
       </a>
 
       <button
+        class="theme-toggle"
+        type="button"
+        (click)="toggleTheme()"
+        [attr.aria-label]="isDarkMode ? 'Switch to light theme' : 'Switch to dark theme'"
+        [title]="isDarkMode ? 'Light theme' : 'Dark theme'">
+        <!-- Sun Icon (shown in dark mode) -->
+        <svg *ngIf="isDarkMode" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/>
+          <line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/>
+          <line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <!-- Moon Icon (shown in light mode) -->
+        <svg *ngIf="!isDarkMode" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+
+      <button
         class="menu-toggle"
         type="button"
         (click)="toggleMenu()"
@@ -109,7 +133,6 @@
           <div class="profile-ring"></div>
         </div>
         <div class="hero-meta">
-          <div class="hero-number">01</div>
           <div class="meta-block">
             <p>BASED IN</p>
             <strong>{{ portfolio.location }}</strong>
@@ -131,7 +154,6 @@
   <section id="about" class="section" data-aos="fade-up">
     <div class="container">
       <div class="section-heading">
-        <span class="section-number">02</span>
         <h2>About</h2>
       </div>
 
@@ -167,7 +189,6 @@
   <section id="experience" class="section section-border" data-aos="fade-up">
     <div class="container">
       <div class="section-heading">
-        <span class="section-number">03</span>
         <h2>Experience</h2>
       </div>
 
@@ -218,7 +239,6 @@
   <section id="education" class="section section-border" data-aos="fade-up">
     <div class="container">
       <div class="section-heading">
-        <span class="section-number">04</span>
         <h2>Education</h2>
       </div>
 
@@ -245,8 +265,7 @@
     <div class="container">
       <div class="section-heading work-heading">
         <div>
-          <span class="section-number">05</span>
-          <h2>Projects</h2>
+          <h2>Selected Projects</h2>
         </div>
       </div>
 
@@ -309,7 +328,6 @@
   <section id="toolkit" class="section section-border" data-aos="fade-up">
     <div class="container">
       <div class="section-heading">
-        <span class="section-number">06</span>
         <h2>Skills</h2>
       </div>
 
@@ -329,7 +347,6 @@
   <section id="achievements" class="section section-border" data-aos="fade-up">
     <div class="container">
       <div class="section-heading">
-        <span class="section-number">07</span>
         <h2>Leadership & Achievements</h2>
       </div>
 
@@ -360,7 +377,6 @@
   <!-- ===== CONTACT SECTION ===== -->
   <section id="contact" class="contact-section" data-aos="fade-up">
     <div class="container">
-      <div class="contact-number">08</div>
 
       <p class="eyebrow">GET IN TOUCH</p>
       <h2>Let's build<br><em>something useful.</em></h2>
