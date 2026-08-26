@@ -561,12 +561,39 @@ footer,
 
 /* ===== ABOUT ===== */
 
+.about-grid {
+  margin-left: 90px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  border-top: 1px solid var(--line);
+  padding-top: 26px;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: min(100%, 760px);
+  padding: 18px 18px 8px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease, padding 0.3s ease;
+}
+
+.about-content:hover {
+  background: var(--hover-bg);
+  border-color: var(--line);
+  transform: translateY(-2px);
+}
+
 .about-title p {
-  max-width: 500px;
+  max-width: 760px;
   font-size: clamp(30px, 4vw, 50px);
   line-height: 1.08;
   letter-spacing: -.05em;
   color: var(--text);
+  transition: color 0.3s ease;
 }
 
 .about-title em {
@@ -576,7 +603,7 @@ footer,
 }
 
 .about-copy {
-  max-width: 560px;
+  max-width: 760px;
 }
 
 .about-copy p {
@@ -584,6 +611,12 @@ footer,
   color: var(--muted-light);
   font-size: 15px;
   line-height: 1.9;
+  transition: color 0.3s ease;
+}
+
+.about-content:hover .about-title p,
+.about-content:hover .about-copy p {
+  color: var(--text);
 }
 
 /* ===== TIMELINE ===== */
@@ -1890,9 +1923,7 @@ footer {
   box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05) !important;
 }
 
-/* ======================================== */
 /* ===== HERO PROFILE IMAGE ===== */
-/* ======================================== */
 .hero-image {
   display: flex;
   flex-direction: column;
@@ -1933,9 +1964,7 @@ footer {
   border-color: var(--text);
 }
 
-/* ======================================== */
 /* ===== ABOUT PROFILE IMAGE ===== */
-/* ======================================== */
 .about-image-wrapper {
   display: flex;
   justify-content: center;
@@ -1957,87 +1986,11 @@ footer {
   box-shadow: 0 8px 40px rgba(255, 255, 255, 0.05);
 }
 
-/* ======================================== */
 /* ===== ABOUT GRID UPDATE ===== */
-/* ======================================== */
 .about-grid {
   display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 60px;
-  padding-left: 90px;
-}
-
-.about-content {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-/* ======================================== */
-/* ===== RESPONSIVE ===== */
-/* ======================================== */
-@media (max-width: 900px) {
-  .about-grid {
-    grid-template-columns: 1fr;
-    padding-left: 0;
-    gap: 40px;
-  }
-
-  .about-image-wrapper {
-    justify-content: center;
-  }
-
-  .about-profile-image {
-    width: 220px;
-    height: 220px;
-  }
-}
-
-@media (max-width: 700px) {
-  .hero-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .hero-image {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-  }
-
-  .profile-image-wrapper {
-    width: 140px;
-    height: 140px;
-  }
-
-  .profile-ring {
-    display: none;
-  }
-
-  .hero-meta {
-    flex: 1;
-    min-width: 180px;
-  }
-
-  .about-profile-image {
-    width: 180px;
-    height: 180px;
-  }
-
-  .about-grid {
-    gap: 30px;
-  }
-}
-
-@media (max-width: 400px) {
-  .profile-image-wrapper {
-    width: 110px;
-    height: 110px;
-  }
-
-  .about-profile-image {
-    width: 150px;
-    height: 150px;
-  }
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: 40px;
+  padding-left: 0;
 }
