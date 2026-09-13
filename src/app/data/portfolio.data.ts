@@ -65,6 +65,18 @@ export const portfolio = {
     },
     {
       number: '03',
+      title: 'Weekly Report Generator & Team Dashboard',
+      category: 'Full-Stack · AI-Integrated',
+      year: '2026',
+      description:
+        'Built a full-stack team reporting tool with role-based access for team members and managers, featuring a submit-review-correction workflow with full report version history, a manager analytics dashboard with live charts, and an AI chat assistant using OpenAI function calling to answer natural-language questions grounded in real report data.',
+      technologies: ['Angular', 'Spring Boot', 'Spring Security', 'MySQL', 'JWT', 'OpenAI API', 'Chart.js'],
+            github: 'https://github.com/mayu-pakkiyarajah/weekly-report-generator.git',
+      live: '',
+      featured: true
+    },
+    {
+      number: '04',
       title: 'Book Network',
       category: 'Full-Stack Application',
       year: '2025',
@@ -72,18 +84,6 @@ export const portfolio = {
         'Book Network is a full-stack app for managing book collections and engaging with a community of book enthusiasts.',
       technologies: ['Spring Boot', 'MySQL', 'JWT', 'Spring Security'],
       github: 'https://github.com/mayu-pakkiyarajah/book-network',
-      live: '',
-      featured: true
-    },
-    {
-      number: '04',
-      title: 'Field Work Management System',
-      category: 'Full-Stack Web Application',
-      year: '2024',
-      description:
-        'A field-work management platform connecting field workers and consumers in restructuring sectors. Developed UI designs using Figma, built chat module using .NET SignalR, and developed web frontend pages.',
-      technologies: ['Angular', 'ASP.NET Core', 'MSSQL', 'SignalR', 'Figma'],
-      github: '',
       live: '',
       featured: true
     }
